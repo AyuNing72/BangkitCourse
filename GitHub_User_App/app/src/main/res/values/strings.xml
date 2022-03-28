@@ -1,0 +1,119 @@
+<resources>
+    <string name="app_name">GitHub_User_App</string>
+    <string name="description">nama user</string>
+    <string name="heroes_name">nama</string>
+    <string name="back">Back</string>
+    <string name="fullname">fullnama</string>
+    <string name="username">usernme</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repository">Repository</string>
+    <string name="deskripsidetail">Deskripsi</string>
+    <string name="Location">Location</string>
+    <string name="Company">Company</string>
+
+
+    <string-array name="data_name">
+        <item>Ahmad Dahlan</item>
+        <item>Ahmad Yani</item>
+        <item>Sutomo</item>
+        <item>Gatot Soebroto</item>
+        <item>Ki Hadjar Dewantara</item>
+        <item>Mohammad Hatta</item>
+        <item>Soedirman</item>
+        <item>Soekarno</item>
+        <item>Soepomo</item>
+        <item>RA Kartini</item>
+    </string-array>
+
+    <string-array name="data_username">
+        <item>ahmad_dahlan</item>
+        <item>ahmad_yani</item>
+        <item>sutomo</item>
+        <item>gatot_soebroto</item>
+        <item>ki_hadjar_dewantara</item>
+        <item>mohammad_hatta</item>
+        <item>soedirman</item>
+        <item>soekarno</item>
+        <item>soepomo</item>
+        <item>kartini</item>
+    </string-array>
+
+    <string-array name="data_company">
+        <item>Google, Inc.</item>
+        <item>MindOrksOpenSource</item>
+        <item>Apple Inc</item>
+        <item>Netflix</item>
+        <item>NVIDIA</item>
+        <item>AndroidHive | Droid5</item>
+        <item>gojek-engineering</item>
+        <item>KotlinID</item>
+        <item>DeepMap</item>
+        <item>Nusantara Beta Studio</item>
+    </string-array>
+
+    <string-array name="data_location">
+        <item>Jawa Tengah, DIY, Indonesia</item>
+        <item>Purworerjo, Indonesia</item>
+        <item>Arafah, Mekkah, Arab Saudi</item>
+        <item>Ungaran, Semarang, Indonesia</item>
+        <item>Kadipaten Paku Alaman, Yogyakarta, Indonesia</item>
+        <item>BukitTinggi, Sumatra Barat</item>
+        <item>Magelang, Jawa Tengah, Indonesia</item>
+        <item>Jakarta, Indonesia</item>
+        <item>Kabupaten Sukoharjo, Jawa Tengah, Indonesia</item>
+        <item>Jepara, Indonesia</item>
+    </string-array>
+
+    <integer-array name="data_repository">
+        <item>102</item>
+        <item>37</item>
+        <item>10</item>
+        <item>30</item>
+        <item>56</item>
+        <item>44</item>
+        <item>28</item>
+        <item>1064</item>
+        <item>110</item>
+        <item>65</item>
+    </integer-array>
+
+    <integer-array name="data_followers">
+        <item>5153</item>
+        <item>124765</item>
+        <item>7972</item>
+        <item>56995</item>
+        <item>788</item>
+        <item>18628</item>
+        <item>267</item>
+        <item>158</item>
+        <item>400</item>
+        <item>365</item>
+    </integer-array>
+
+    <integer-array name="data_following">
+        <item>3</item>
+        <item>10</item>
+        <item>12</item>
+        <item>2</item>
+        <item>0</item>
+        <item>39</item>
+        <item>23</item>
+        <item>61</item>
+        <item>1</item>
+        <item>0</item>
+    </integer-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/ahmad_dahlan</item>
+        <item>@drawable/ahmad_yani</item>
+        <item>@drawable/bung_tomo</item>
+        <item>@drawable/gatot_subroto</item>
+        <item>@drawable/ki_hadjar_dewantara</item>
+        <item>@drawable/mohammad_hatta</item>
+        <item>@drawable/sudirman</item>
+        <item>@drawable/sukarno</item>
+        <item>@drawable/supomo</item>
+        <item>@drawable/ra_kartini</item>
+    </integer-array>
+</resources>
