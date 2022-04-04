@@ -29,7 +29,7 @@ class UserViewModel : ViewModel(){
                 }
 
                 override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                    Log.d("Failure", t.message!!)
+                    Log.d("Failure", t.message.toString())
                 }
 
             })

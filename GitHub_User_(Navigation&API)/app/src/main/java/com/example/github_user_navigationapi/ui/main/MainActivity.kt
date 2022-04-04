@@ -2,16 +2,20 @@ package com.example.github_user_navigationapi.ui.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.github_user_navigationapi.R
 import com.example.github_user_navigationapi.data.model.User
 import com.example.github_user_navigationapi.databinding.ActivityMainBinding
 import com.example.github_user_navigationapi.ui.detail.DetailUserActivity
+import com.example.github_user_navigationapi.ui.favorite.FavoriteActivity
+import com.example.github_user_navigationapi.ui.setting.SettingsActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -28,16 +32,18 @@ class MainActivity : AppCompatActivity() {
 
         adapter = UserAdapter()
         adapter.notifyDataSetChanged()
+
         adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback{
             override fun onItemClicked(data: User) {
                 Intent(this@MainActivity,DetailUserActivity::class.java).also {
                     it.putExtra(DetailUserActivity.EXTRA_USERNAME, data.login)
+                    it.putExtra(DetailUserActivity.EXTRA_ID, data.id)
+                    it.putExtra(DetailUserActivity.EXTRA_AVATAR, data.avatar_url)
                     startActivity(it)
                 }
             }
         })
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            UserViewModel::class.java)
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[UserViewModel::class.java]
 
         binding.apply {
             rvUser.layoutManager=LinearLayoutManager(this@MainActivity)
@@ -76,5 +82,27 @@ class MainActivity : AppCompatActivity() {
         }else{
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.favorite_menu -> {
+                Intent(this, FavoriteActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
+            R.id.setting_menu -> {
+                Intent(this, SettingsActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -3,4 +3,9 @@
     <string name="menu_1">Followers</string>
     <string name="menu_2">Following</string>
     <string name="search">Search</string>
+    <string name="image">image</string>
+    <string name="profile">profile</string>
+    <string name="favorite">Favorite</string>
+    <string name="label_dark_mode">Dark Mode</string>
+    <string name="change">Change Theme Setting</string>
 </resources>

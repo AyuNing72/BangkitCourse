@@ -1,6 +1,5 @@
 package com.example.github_user_navigationapi.ui.detail
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -18,7 +17,6 @@ class FollowersFragment: Fragment(R.layout.fragment_follow) {
     private lateinit var adapter: UserAdapter
     private lateinit var username:String
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -27,7 +25,6 @@ class FollowersFragment: Fragment(R.layout.fragment_follow) {
         _binding = FragmentFollowBinding.bind(view)
 
         adapter = UserAdapter()
-        adapter.notifyDataSetChanged()
 
         binding.apply {
             rvUser.setHasFixedSize(true)
@@ -36,7 +33,7 @@ class FollowersFragment: Fragment(R.layout.fragment_follow) {
         }
 
         showLoading(true)
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel::class.java)
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[FollowersViewModel::class.java]
         viewModel.setListFollowers(username)
         viewModel.getListFollowers().observe(viewLifecycleOwner) {
             if (it!=null){
@@ -52,10 +49,6 @@ class FollowersFragment: Fragment(R.layout.fragment_follow) {
     }
 
     private fun showLoading(state: Boolean){
-        if (state){
-            binding.progressBar.visibility = View.VISIBLE
-        }else{
-            binding.progressBar.visibility = View.GONE
-        }
+        binding.progressBar.visibility = if (state) View.VISIBLE else View.GONE
     }
 }
